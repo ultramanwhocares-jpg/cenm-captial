@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Book a Consultation — CENM Capital Holdings</title>
+<meta name="description" content="Sit down with a CENM Capital advisor and build a plan around your goals — buying, selling, or growing a property portfolio. Free consultation, no obligation."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css"/>
+<style>
+  :root{
+    --navy:#0B1929; --navy-2:#0F2035; --cream:#F7F6F3; --cream-2:#EFEDE6;
+    --gold:#8C5E0A; --gold-lite:#C9A84C; --gold-pale:#E8C97A;
+    --text-strong:#0B1929; --text-body:#3a4554; --text-muted:#76808d;
+    --line:rgba(11,25,41,0.09);
+    --shadow:0 2px 16px rgba(11,25,41,0.07);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--cream);color:var(--text-body);-webkit-font-smoothing:antialiased;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 40px;}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:50;background:rgba(247,246,243,0.86);backdrop-filter:blur(12px);border-bottom:0.5px solid var(--line);}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:70px;}
+  .brand{display:flex;align-items:center;gap:11px;}
+  .brand img{height:34px;display:block;}
+  .brand .nm{font-size:12px;font-weight:600;letter-spacing:0.09em;color:var(--text-strong);}
+  .brand .tg{font-size:9px;letter-spacing:0.18em;color:var(--gold);margin-top:2px;}
+  .nav-links{display:flex;align-items:center;gap:30px;}
+  .nav-links a{font-size:14px;color:var(--text-body);}
+  .nav-links a:hover{color:var(--gold);}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-family:inherit;font-size:14px;font-weight:600;border-radius:10px;cursor:pointer;border:none;transition:transform .15s,box-shadow .15s;}
+  .btn-solid{background:var(--navy);color:#fff;padding:12px 20px;}
+  .btn-solid:hover{transform:translateY(-1px);box-shadow:var(--shadow);}
+  .btn-gold{background:var(--gold-lite);color:var(--navy);padding:15px 26px;font-size:16px;}
+  .btn-gold:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(201,168,76,0.32);}
+
+  /* hero */
+  .hero{display:grid;grid-template-columns:1.05fr 0.95fr;gap:56px;align-items:center;padding:72px 0 64px;}
+  .eyebrow{font-size:13px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:13px;margin-bottom:22px;}
+  .eyebrow::after{content:"";width:54px;height:0.5px;background:rgba(140,94,10,0.45);}
+  h1{font-size:60px;font-weight:500;line-height:1.02;letter-spacing:-2px;color:var(--text-strong);text-wrap:balance;}
+  h1 em{font-style:normal;color:var(--gold);}
+  .lead{font-size:18px;font-weight:300;line-height:1.75;color:var(--text-body);max-width:480px;margin-top:22px;}
+  .points{margin-top:30px;display:flex;flex-direction:column;gap:14px;}
+  .point{display:flex;align-items:center;gap:13px;font-size:16px;color:var(--text-strong);}
+  .point i{color:var(--gold);font-size:20px;}
+  .trust{margin-top:38px;padding-top:30px;border-top:0.5px solid var(--line);display:flex;gap:44px;}
+  .trust .n{font-size:30px;font-weight:500;letter-spacing:-1px;color:var(--text-strong);}
+  .trust .n small{color:var(--gold);font-size:22px;}
+  .trust .l{font-size:13px;color:var(--text-muted);margin-top:4px;}
+
+  /* form card */
+  .card{background:#fff;border:0.5px solid var(--line);border-radius:20px;padding:38px 36px;box-shadow:var(--shadow);}
+  .card h2{font-size:23px;font-weight:500;color:var(--text-strong);letter-spacing:-0.5px;}
+  .card .sub{font-size:14px;color:var(--text-muted);margin-top:6px;margin-bottom:26px;}
+  .field{margin-bottom:16px;}
+  .field label{display:block;font-size:12px;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;color:var(--text-muted);margin-bottom:7px;}
+  .field input,.field select,.field textarea{width:100%;font-family:inherit;font-size:15px;color:var(--text-strong);background:var(--cream);border:0.5px solid var(--line);border-radius:10px;padding:13px 14px;outline:none;transition:border-color .15s,box-shadow .15s;}
+  .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold-lite);box-shadow:0 0 0 3px rgba(201,168,76,0.15);}
+  .field textarea{resize:vertical;min-height:74px;}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .card .btn-gold{width:100%;justify-content:center;margin-top:8px;}
+  .fineprint{font-size:12px;color:var(--text-muted);text-align:center;margin-top:14px;line-height:1.6;}
+
+  /* success state */
+  .success{display:none;flex-direction:column;align-items:center;text-align:center;padding:34px 10px;}
+  .success.show{display:flex;}
+  .success .ring{width:74px;height:74px;border-radius:50%;background:rgba(201,168,76,0.16);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:38px;margin-bottom:20px;}
+  .success h2{font-size:24px;font-weight:500;color:var(--text-strong);}
+  .success p{font-size:15px;color:var(--text-body);line-height:1.7;margin-top:10px;max-width:340px;}
+
+  footer{border-top:0.5px solid var(--line);background:var(--cream-2);margin-top:30px;}
+  .foot-in{display:flex;align-items:center;justify-content:space-between;padding:28px 0;}
+  .foot-in .c{font-size:12px;color:var(--text-muted);}
+  .foot-links{display:flex;gap:22px;}
+  .foot-links a{font-size:12px;color:var(--text-muted);}
+  .foot-links a:hover{color:var(--gold);}
+
+  @media(max-width:900px){
+    .hero{grid-template-columns:1fr;gap:40px;padding:48px 0;}
+    h1{font-size:44px;}
+    .nav-links{display:none;}
+    .trust{gap:30px;}
+  }
+</style>
+</head>
+<body>
+  <nav>
+    <div class="wrap nav-in">
+      <a class="brand" href="index.html">
+        <img src="logo-mark.png" alt="CENM Capital"/>
+        <div>
+          <div class="nm">CENM CAPITAL HOLDINGS</div>
+          <div class="tg">BUILDING WEALTH WITH PURPOSE</div>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="listings.html">Listings</a>
+        <a href="valuation.html">Free valuation</a>
+        <a href="#book">Consultation</a>
+      </div>
+      <a class="btn btn-solid" href="#book">Book now <i class="ti ti-arrow-right"></i></a>
+    </div>
+  </nav>
+
+  <section class="wrap hero" id="book">
+    <div>
+      <div class="eyebrow">Private Advisory</div>
+      <h1>Your next move,<br/><em>expertly guided.</em></h1>
+      <p class="lead">Sit down with a CENM advisor and build a plan around your goals — buying, selling, or growing a portfolio. Free, and no obligation.</p>
+      <div class="points">
+        <div class="point"><i class="ti ti-circle-check"></i> A dedicated advisor who knows your local market</div>
+        <div class="point"><i class="ti ti-circle-check"></i> A clear, personalised plan — no pressure</div>
+        <div class="point"><i class="ti ti-circle-check"></i> Honest guidance whether you're ready now or later</div>
+      </div>
+      <div class="trust">
+        <div><div class="n">18,400</div><div class="l">homes sold</div></div>
+        <div><div class="n">4.9<small> ★</small></div><div class="l">client rating</div></div>
+        <div><div class="n">320</div><div class="l">expert advisors</div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <form id="lead-form" name="consultation" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="consultation"/>
+        <p class="hidden" hidden><label>Don't fill this out: <input name="bot-field"/></label></p>
+        <h2>Book your free consultation</h2>
+        <p class="sub">Tell us a little about you — an advisor will reach out within one business day.</p>
+        <div class="row2">
+          <div class="field"><label>First name</label><input name="first_name" required placeholder="Jordan"/></div>
+          <div class="field"><label>Last name</label><input name="last_name" required placeholder="Reyes"/></div>
+        </div>
+        <div class="field"><label>Email</label><input name="email" type="email" required placeholder="you@email.com"/></div>
+        <div class="field"><label>Phone</label><input name="phone" type="tel" placeholder="(555) 000-0000"/></div>
+        <div class="field"><label>I'm interested in</label>
+          <select name="interest">
+            <option>Buying a home</option>
+            <option>Selling a home</option>
+            <option>Investing / portfolio</option>
+            <option>Just exploring</option>
+          </select>
+        </div>
+        <div class="field"><label>Anything we should know? (optional)</label><textarea name="message" placeholder="Timeline, budget, neighbourhoods…"></textarea></div>
+        <button type="submit" class="btn btn-gold">Book a consultation <i class="ti ti-arrow-right"></i></button>
+        <p class="fineprint">Free · no obligation · your details stay private.</p>
+      </form>
+
+      <div class="success" id="success">
+        <div class="ring"><i class="ti ti-check"></i></div>
+        <h2>You're booked in.</h2>
+        <p>Thanks <span id="sname">there</span> — a CENM advisor will reach out within one business day. Keep an eye on your inbox.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap foot-in">
+      <div class="c">© 2026 CENM Capital Holdings. All rights reserved.</div>
+      <div class="foot-links">
+        <a href="#">Privacy</a><a href="#">Terms</a><a href="valuation.html">Free valuation</a><a href="#">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    var form = document.getElementById('lead-form');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var data = Object.fromEntries(new FormData(form).entries());
+      try{
+        var leads = JSON.parse(localStorage.getItem('cenm_consult_leads')||'[]');
+        leads.push(Object.assign({ts:new Date().toISOString()}, data));
+        localStorage.setItem('cenm_consult_leads', JSON.stringify(leads));
+      }catch(_){}
+      document.getElementById('sname').textContent = data.first_name || 'there';
+      form.style.display='none';
+      document.getElementById('success').classList.add('show');
+      /* When hosted on Netlify, also POST to Netlify Forms so it reaches your inbox */
+      try{
+        fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'},
+          body:new URLSearchParams(new FormData(form)).toString()});
+      }catch(_){}
+    });
+  </script>
+</body>
+</html>
